@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الباب الأوثق | قريبًا</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      color: #fff;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Background Image */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(rgba(70, 55, 35, 0.5), rgba(70, 55, 35, 0.5)),
+        url('assets/1.jpg') no-repeat center center/cover;
+      z-index: -1;
+    }
+
+    header {
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      padding: 20px 10%;
+    }
+
+    header img {
+      width: 150px;
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.5s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.05);
+    }
+
+    .content {
+      height: calc(100vh - 100px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: right;
+      padding: 0 10%;
+      color: #fff;
+    }
+
+    .content h1 {
+      font-size: 4rem;
+      line-height: 1.2;
+      font-weight: 700;
+      background: linear-gradient(90deg, #b28b53, #f2e1c2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      color: #f7f3ec;
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      font-size: 1rem;
+      background-color: #6b4c2a;
+      color: #f8e8c8;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #b28b53;
+      color: #fff;
+    }
+
+    .scroll-text {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      color: #e4d6b9;
+      opacity: 0.8;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+
+      }
+      .content {
+        padding: 0 5%;
+        align-items: center;
+        text-align: center;
+      }
+
+      .content h1 {
+        font-size: 2.5rem;
+      }
+
+      .content p {
+        font-size: 1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="background"></div>
+
+  <header>
+    <!-- Logo placeholder -->
+    <img src="assets/logo/Main golden logo.png" alt="شعار الباب الأوثق">
+  </header>
+
+  <main class="content">
+    <h1>حياة راقية تُعاد تعريفها, قريبا</h1>
+    <p>تجربة فريدة في عالم التسويق العقاري — قريبًا مع الباب الأوثق.</p>
+    <a href="#" class="btn">اعرف أكثر</a>
+  </main>
+
+
+  <script>
+    // GSAP animations
+    gsap.from("header img", {opacity: 0, y: -30, duration: 1});
+    gsap.from(".content h1", {opacity: 0, x: 50, duration: 1.2, delay: 0.3});
+    gsap.from(".content p", {opacity: 0, x: 50, duration: 1, delay: 0.6});
+    gsap.from(".btn", {opacity: 0, y: 30, duration: 1, delay: 1});
+    gsap.from(".scroll-text", {opacity: 0, duration: 1.5, delay: 1.5});
+  </script>
+
+</body>
+</html>
